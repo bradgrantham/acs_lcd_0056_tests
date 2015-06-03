@@ -1,0 +1,17 @@
+./clearit com1
+read line
+./print com1 1 0 0 0 0 "$line"
+read line
+./print com1 2 0 0 0 0 "$line"
+read line
+./print com1 4 0 0 0 0 "$line"
+read line
+./print com1 8 0 0 0 0 "$line"
+read line
+./print com1 16 0 0 0 0 "$line"
+read line
+./print com1 32 0 0 0 0 "$line"
+read line
+./print com1 64 0 0 0 0 "$line"
+read line
+./print com1 128 0 0 0 0 "$line"

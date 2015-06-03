@@ -1,0 +1,16 @@
+while :
+do
+    (
+	date
+	echo `ssh plunk.org 'frm -s new | grep -v "You have no new mail" | wc' | awk '{print $1}'` new messages
+	echo "..." `ssh plunk.org 'frm -s new | grep Lawrence | grep -v "You have no new mail" | wc' | awk '{print $1}'` from Lawrence
+	echo "..." `ssh plunk.org 'frm -s new | grep bridgedancer | grep -v "You have no new mail" | wc' | awk '{print $1}'` from Nora
+	load=`ssh plunk.org uptime | awk '{print $10}'`
+	load=`echo $load | sed 's/,//'`
+# echo plunk load $load
+	echo plunk.org load is $load
+    ) > screen.txt
+    cat screen.txt | toscreen
+# cat screen.txt | textscreen | loadppm COM1 "baud=38400 parity=N data=8 stop=1"
+    sleep 30
+done
