@@ -4,7 +4,6 @@ do
 	date
 	echo `ssh plunk.org 'frm -s new | grep -v "You have no new mail" | wc' | awk '{print $1}'` new messages
 	echo "..." `ssh plunk.org 'frm -s new | grep Lawrence | grep -v "You have no new mail" | wc' | awk '{print $1}'` from Lawrence
-	echo "..." `ssh plunk.org 'frm -s new | grep bridgedancer | grep -v "You have no new mail" | wc' | awk '{print $1}'` from Nora
 	load=`ssh plunk.org uptime | awk '{print $10}'`
 	load=`echo $load | sed 's/,//'`
 # echo plunk load $load
